@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  MaterialApp app = new MaterialApp(
-      title: "contador de pessoas",
-      home: Column(
+  MaterialApp app =
+      new MaterialApp(title: "contador de pessoas",
+      home: Stack(
+        children: <Widget>[
+          Image.asset(
+            "images/abel.jpeg",
+            fit: BoxFit.cover,
+            height: 1000.0,
+          ), 
+          Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
@@ -16,19 +23,25 @@ void main() {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              FlatButton(
-                child: Text(
-                  "+1",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white),
+              Padding(
+                padding: EdgeInsets.all(10.0),
+                child: FlatButton(
+                  child: Text(
+                    "+1",
+                    style: TextStyle(fontSize: 40.0, color: Colors.white),
+                  ),
+                  onPressed: () {},
                 ),
-                onPressed: () {},
               ),
-              FlatButton(
-                child: Text(
-                  "-1",
-                  style: TextStyle(fontSize: 40.0, color: Colors.white),
+              Padding(
+                padding: EdgeInsets.all(10.0),
+                child: FlatButton(
+                  child: Text(
+                    "-1",
+                    style: TextStyle(fontSize: 40.0, color: Colors.white),
+                  ),
+                  onPressed: () {},
                 ),
-                onPressed: () {},
               ),
             ],
           ),
@@ -39,6 +52,8 @@ void main() {
                 fontStyle: FontStyle.italic,
                 fontSize: 30.0),
           )
+        ],
+      )
         ],
       ));
   runApp(app);
